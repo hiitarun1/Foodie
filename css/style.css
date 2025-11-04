@@ -1598,3 +1598,20 @@ button,
     border-color: rgba(242, 189, 18, 0.9);
 }
 
+@media screen and (max-width: 1353px) {
+    .hidden-search{
+        display: none;
+    }
+
+    .desktop-action{
+        padding-right:30px;
+    }
+
+    .cart-icon{
+        margin-right:30px;
+    }
+
+    .hamberger{
+        margin-right:70px;
+    }
+}
