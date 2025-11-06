@@ -24,6 +24,16 @@
     --shadow-strong: rgba(0, 0, 0, 0.2);
     --navbar-bg: transparent;
     --logo-color: #111;
+    --gold-hover: #e67e22;
+    --success: #27ae60;
+    --error: #e74c3c;
+    --yellow-glow: #f9d423;
+    --light-yellow-glow: #ffe259;
+    --red-touch: #ff4e50;
+    --orange-touch: #ffa751;
+    --gold-glow: #f39c12;
+    --white: #ffffff;
+
 }
 
 [data-theme="dark"] {
@@ -43,6 +53,7 @@
     --shadow-strong: rgba(0, 0, 0, 0.5);
     --navbar-bg: transparent;
     --logo-color: #fff;
+    --text-black:#2a2a2a;
 }
 
 /* Dark theme specific improvements */
