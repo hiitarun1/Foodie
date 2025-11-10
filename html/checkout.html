@@ -337,6 +337,9 @@
       // Init enhanced checkout features
       if (window.initCityAutocomplete) window.initCityAutocomplete();
       if (window.initPincodeValidation) window.initPincodeValidation();
+
+      // Check for existing active orders
+      checkExistingOrders();
     });
 
     function displayOrderItems() {
@@ -453,6 +456,8 @@
       return isValid;
     }
 
+
+
     function placeOrderRazorpay() {
       const totalAmount =
         parseFloat(
@@ -473,6 +478,18 @@
           console.log("Payment Success:", response);
           document.getElementById("successModal").classList.add("active");
           sessionStorage.removeItem("checkoutCart");
+
+          // Request notification permission and start order tracking
+          requestNotificationPermission().then(permission => {
+            if (permission === 'granted') {
+              console.log('Notification permission granted');
+              startOrderTracking(orderId);
+            } else {
+              console.log('Notification permission denied');
+              // Still start tracking but without notifications
+              startOrderTracking(orderId);
+            }
+          });
         },
         prefill: {
           name: document.getElementById("fullName").value,
@@ -492,4 +509,4 @@
   <script src="../js/checkout.js"></script>
 </body>
 
-</html>
+</html><script src="../js/notifications.js"></script>
