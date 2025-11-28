@@ -11,7 +11,8 @@
 /* Grid Layout */
 .popular-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* CHANGED: Forces exactly 3 columns on screens larger than mobile */
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 4rem;
 }
@@ -95,6 +96,7 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .popular-grid {
+        /* Stacks to 1 column on mobile devices */
         grid-template-columns: 1fr;
         padding: 0 1rem;
     }
